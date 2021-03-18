@@ -700,6 +700,9 @@ func TestDefaultTimestamp(t *testing.T) {
 		t.Fatalf("expected localtimestamp, got 0")
 	}
 
+	// Sleep for a tiny amount to ensure a different timestamp
+	time.Sleep(100 * time.Millisecond)
+
 	query = `UPDATE pokemon SET seen = current_timestamp WHERE name = 'Charmander'`
 	_, err = db.Exec(query)
 	if err != nil {
@@ -719,6 +722,9 @@ func TestDefaultTimestamp(t *testing.T) {
 	if seen2 == seen {
 		t.Fatalf("expected different value after update")
 	}
+
+	// Sleep for a tiny amount to ensure a different timestamp
+	time.Sleep(100 * time.Millisecond)
 
 	// Check with NOW()
 	query = `UPDATE pokemon SET seen = NOW() WHERE name = 'Charmander'`
