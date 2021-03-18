@@ -128,6 +128,12 @@ func (cec *ChannelEngineConn) WriteResult(lastInsertedID int64, rowsAffected int
 
 // WriteError when error occurs
 func (cec *ChannelEngineConn) WriteError(err error) error {
+	defer func() {
+		if werr := recover(); werr != nil {
+			fmt.Println("Error writing to connection channel", werr)
+		}
+	}()
+
 	m := message{
 		Type:  errMessage,
 		Value: []string{err.Error()},
