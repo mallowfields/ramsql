@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/proullon/ramsql/engine/log"
+	"github.com/mallowfields/ramsql/engine/log"
 )
 
 func init() {
