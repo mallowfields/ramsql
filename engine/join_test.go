@@ -4,9 +4,9 @@ import (
 	"database/sql"
 	"testing"
 
-	"github.com/proullon/ramsql/engine/log"
+	"github.com/mallowfields/ramsql/engine/log"
 
-	_ "github.com/proullon/ramsql/driver"
+	_ "github.com/mallowfields/ramsql/driver"
 )
 
 func TestJoinOrderBy(t *testing.T) {

@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/proullon/ramsql/engine/log"
-	"github.com/proullon/ramsql/engine/parser"
-	"github.com/proullon/ramsql/engine/protocol"
+	"github.com/mallowfields/ramsql/engine/log"
+	"github.com/mallowfields/ramsql/engine/parser"
+	"github.com/mallowfields/ramsql/engine/protocol"
 )
 
 func attributeExistsInTable(e *Engine, attr string, table string) error {
